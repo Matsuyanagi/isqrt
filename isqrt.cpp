@@ -12,6 +12,9 @@ sqrt(   12345678901234567) =         111111110.61 =            111111110
 sqrt(       1111111111111) =           1054092.55 =              1054092
 sqrt( 9223372036854775807) =        3037000499.98 =           3037000499
 sqrt(18446744073709551615) =        4294967296.00 =           4294967295		← sqrt(double) が 18446744073709551615 有効桁数が足りないため
+
+http://itchyny.hatenablog.com/entry/20101222/1293028538 より
+
  */
 
 #include "stdafx.h"
@@ -30,16 +33,6 @@ int main() {
 		printf("sqrt(%20llu) = %20.2lf = %20llu \n", arr[i], sqrt(arr[i]), ans);
 	}
 	
-	
-	
-#if false
-	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
-		//    unsigned __int64 temp = pow(arr[i], 2);
-		unsigned __int64 temp = arr[i] * arr[i];
-		unsigned __int64 ans = mysqrt(temp);
-		printf("%llu = sqrt(%llu) = %llu \n", arr[i], temp, ans);
-	}
-#endif
 	return 0;
 }
 
